@@ -6,11 +6,19 @@ const cadastro = document.getElementById("cadastro")
 login.addEventListener("click", (e) => {
    let user = document.getElementById("usuario").value
    let senha = document.getElementById("senha").value
+   let obj = {email: user, senha: senha}
+   encontraUsuario(obj)
 })
-cadastro.addEventListener("click", (e) => {
-   userlogin.find((userlogin) => userLogin.email === "victorsena301@gmail.com")
-   console.log(usuario)
-})
-function encontraUsuario(value, index, array){
-console.table(value.email)
+function encontraUsuario(value){
+   if(senha === ""){
+      alert("A senha nao pode estar vazia!")
+   }else{
+      var usuario = userlogin.find((obj) => obj.email === value.email)
+      if(usuario.senha === value.senha){
+        window.location.href == "127.0.0.1:5000/homeUsuario.html"
+      }else{
+         alert("Deu ruim! Para o email: " + value.email)
+   }
+   }
+   
 }
